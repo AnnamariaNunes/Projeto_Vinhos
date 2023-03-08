@@ -83,6 +83,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="criar_conta.aspx" />
+    <Content Include="home.aspx" />
     <Content Include="login.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -121,6 +122,7 @@
     <Content Include="utilizadores\area_pessoal.aspx" />
     <Content Include="utilizadores\criar_vinho.aspx" />
     <Content Include="utilizadores\editar_vinho.aspx" />
+    <Content Include="vinho.aspx" />
     <Content Include="Web.config" />
     <Content Include="Site1.Master" />
     <Content Include="utilizadores\Web.config" />
@@ -146,6 +148,13 @@
     </Compile>
     <Compile Include="criar_conta.aspx.designer.cs">
       <DependentUpon>criar_conta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
@@ -182,6 +191,13 @@
     </Compile>
     <Compile Include="utilizadores\editar_vinho.aspx.designer.cs">
       <DependentUpon>editar_vinho.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vinho.aspx.cs">
+      <DependentUpon>vinho.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vinho.aspx.designer.cs">
+      <DependentUpon>vinho.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
