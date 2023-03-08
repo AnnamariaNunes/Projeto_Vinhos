@@ -6,15 +6,61 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
+            <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #ff6a00;">
+                <div class="container-fluid">
+                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav">
+                           <asp:HyperLink NavigateUrl="~/home.aspx" Text="Pagina Inicial" runat="server" CssClass="nav-link nav-active"></asp:HyperLink>
+                            <asp:HyperLink NavigateUrl="~/pesquisa.aspx" Text="Pesquisa" CssClass="nav-link nav-activem" runat="server"></asp:HyperLink>
+                         </div>  
+                        <div class="navbar-nav ms-auto">
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                <asp:LoginView ID="LoginView1" runat="server">
+                                    <AnonymousTemplate>
+                                        <asp:HyperLink ID="HyperLink1" runat="server" CssClass="nav-link nav-item" NavigateUrl="~/criar_conta.aspx">Criar conta</asp:HyperLink>
+                                        <asp:HyperLink ID="HyperLink2" CssClass="nav-link nav-item" runat="server" NavigateUrl="~/login.aspx">Login</asp:HyperLink>
+                                    </AnonymousTemplate>
+                                   <RoleGroups>
+                                        <asp:RoleGroup Roles="utilizadores">
+                                            <ContentTemplate>
+                                                <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/utilizadores/area_pessoal.aspx" class="nav-item nav-link">Área pessoal</asp:HyperLink>
+                                                <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/utilizadores/criar_vinho.aspx" class="nav-item nav-link">Novo vinho</asp:HyperLink>
+                                                <asp:LoginStatus ID="LoginStatus1" runat="server" class="nav-item nav-link" OnLoggingOut="LoginStatus_LoggingOut" LogoutText="Logout" />
+                                            </ContentTemplate>
+                                        </asp:RoleGroup>
+                                        <asp:RoleGroup Roles="administradores">
+                                            <ContentTemplate>
+                                                <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/administradores/area_gestao.aspx" class="nav-item nav-link">Área de gestão</asp:HyperLink>
+                                                <div class="nav-item dropdown">
+                                                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Gerir dados</a>
+                                                    <div class="dropdown-menu">
+                                                        <asp:HyperLink NavigateUrl="~/administradores/castas.aspx" Text="Castas" runat="server" CssClass="dropdown-item" />
+                                                        <asp:HyperLink NavigateUrl="~/administradores/enologos.aspx" Text="Enólogos" runat="server" CssClass="dropdown-item" />
+                                                        <asp:HyperLink NavigateUrl="~/administradores/produtores.aspx" Text="Produtores" runat="server" CssClass="dropdown-item" />
+                                                        <asp:HyperLink NavigateUrl="~/administradores/regioes.aspx" Text="Regiões" runat="server" CssClass="dropdown-item" />
+                                                        <asp:HyperLink NavigateUrl="~/administradores/tipos.aspx" Text="Tipos de vinho" runat="server" CssClass="dropdown-item" />
+                                                    </div>
+                                                </div>
+                                                <asp:LoginStatus ID="LoginStatus2" runat="server" class="nav-item nav-link" OnLoggingOut="LoginStatus_LoggingOut" LogoutText="Logout" />
+                                            </ContentTemplate>
+                                        </asp:RoleGroup>
+                                    </RoleGroups>
+                                 </asp:LoginView>
+                                </asp:ContentPlaceHolder>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
     </form>
 </body>
 </html>

@@ -19,14 +19,15 @@ namespace Projeto_Final_Vinho
         protected void loginUtilizador_LoggedIn(object sender, EventArgs e)
         {
             MembershipUser user = Membership.GetUser(loginUtil.UserName);
-        
+
             if (Roles.IsUserInRole(loginUtil.UserName, "administradores") == true)
                 Response.Redirect("administradores/area_gestao.aspx");
-            
+
             if (Roles.IsUserInRole(loginUtil.UserName, "utilizadores"))
             {
                 Session["id_utilizador"] = user.ProviderUserKey.ToString();
                 Response.Redirect("utilizadores/area_pessoal.aspx");
             }
+        }
     }
 }

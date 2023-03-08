@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="administradores\area_gestao.aspx" />
+    <Content Include="administradores\castas.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -131,6 +132,13 @@
     </Compile>
     <Compile Include="administradores\area_gestao.aspx.designer.cs">
       <DependentUpon>area_gestao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administradores\castas.aspx.cs">
+      <DependentUpon>castas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="administradores\castas.aspx.designer.cs">
+      <DependentUpon>castas.aspx</DependentUpon>
     </Compile>
     <Compile Include="criar_conta.aspx.cs">
       <DependentUpon>criar_conta.aspx</DependentUpon>
